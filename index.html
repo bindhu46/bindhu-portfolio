@@ -15,26 +15,28 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#222;
+    margin:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:#FFF5F8;
+    color:#4A4A4A;
     line-height:1.7;
 }
 
 header{
-    background:#0f172a;
-    color:white;
+    background:linear-gradient(135deg,#FADADD,#F8C8DC);
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px;
 }
 
 header h1{
-    font-size:52px;
+    font-size:60px;
+    color:#C2185B;
     margin-bottom:15px;
 }
 
 header p{
-    font-size:22px;
+    font-size:24px;
+    color:#6A1B4D;
 }
 
 section{
@@ -50,10 +52,16 @@ h2{
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    border-radius:20px;
+    padding:30px;
+    margin:25px 0;
+    box-shadow:0 8px 20px rgba(233,30,99,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(233,30,99,.18);
 }
 
 .card h3{
