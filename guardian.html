@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -31,63 +29,25 @@ AI Safety Framework for Production Systems
 <h2>Overview</h2>
 
 <p>
-
-<p>
 Guardian Mode is a conceptual AI safety framework designed to prevent
-high-risk AI actions before they are executed. The project introduces
+high-risk AI actions before they are executed. The framework introduces
 permission-aware guardrails, risk evaluation, approval workflows,
 and immutable audit logging to help organizations safely deploy AI
 systems in production environments.
 </p>
-</p>
+
+</div>
+
 <div class="section">
 
 <h2>The Problem</h2>
 
 <p>
 Modern AI systems can accidentally perform actions that users never intended,
-such as modifying databases, exposing confidential information, deleting
-records, or executing unsafe commands. Without proper safeguards,
-these actions can create significant operational and security risks.
-</p>
-
-</div>
-    <div class="section">
-
-<h2>The Solution</h2>
-
-<p>
-Guardian Mode introduces a safety layer between AI systems and production
-resources. Every action is evaluated against permissions, risk policies,
-and business rules before execution. High-risk operations can be blocked,
-require approval, or be fully logged for auditing.
-</p>
-
-</div>
-    <div class="section">
-
-<h2>Key Features</h2>
-
-<ul>
-<li>Permission-aware AI execution</li>
-<li>Risk-based decision engine</li>
-<li>Approval workflow for dangerous actions</li>
-<li>Immutable audit logging</li>
-<li>Role-based access control</li>
-<li>Production safety guardrails</li>
-</ul>
-
-</div>
-</div>
-
-<div class="section">
-
-<h2>The Problem</h2>
-
-<p>
-
-<!-- Paste Problem section here -->
-
+such as modifying databases, exposing confidential information,
+deleting production records, or executing unsafe commands.
+Without proper safeguards these actions can create major operational,
+financial, and security risks.
 </p>
 
 </div>
@@ -97,21 +57,25 @@ require approval, or be fully logged for auditing.
 <h2>Why I Built Guardian Mode</h2>
 
 <p>
-
-<!-- Paste Why section -->
-
+After studying several real-world AI incidents, I wanted to design a
+framework that adds safety before execution rather than relying on
+human intervention after something goes wrong.
+Guardian Mode demonstrates how organizations can introduce governance,
+risk management, and approval workflows into AI systems.
 </p>
 
 </div>
 
 <div class="section">
 
-<h2>Solution</h2>
+<h2>The Solution</h2>
 
 <p>
-
-<!-- Paste Solution -->
-
+Guardian Mode places a protection layer between AI systems and
+production resources. Every request is validated against permissions,
+risk policies, user roles, and business rules before execution.
+High-risk actions can be blocked, require approval, or be recorded
+through immutable audit logs.
 </p>
 
 </div>
@@ -122,13 +86,17 @@ require approval, or be fully logged for auditing.
 
 <ul>
 
-<li>Feature 1</li>
+<li>Permission-aware AI execution</li>
 
-<li>Feature 2</li>
+<li>Risk-based decision engine</li>
 
-<li>Feature 3</li>
+<li>Approval workflow for dangerous operations</li>
 
-<li>Feature 4</li>
+<li>Immutable audit logging</li>
+
+<li>Role-based access control</li>
+
+<li>Production safety guardrails</li>
 
 </ul>
 
@@ -140,7 +108,13 @@ require approval, or be fully logged for auditing.
 
 <p>
 
-<!-- Paste architecture -->
+User Request
+→ Risk Evaluation
+→ Permission Check
+→ Business Rules
+→ Approval Engine
+→ Safe Execution
+→ Audit Log
 
 </p>
 
@@ -148,12 +122,14 @@ require approval, or be fully logged for auditing.
 
 <div class="section">
 
-<h2>Results</h2>
+<h2>Business Impact</h2>
 
 <p>
-
-<!-- Paste results -->
-
+Guardian Mode helps organizations reduce AI risk,
+improve governance,
+increase regulatory compliance,
+protect production systems,
+and create transparent audit trails for every AI decision.
 </p>
 
 </div>
@@ -165,47 +141,37 @@ require approval, or be fully logged for auditing.
 <div class="tech">
 
 <span>AI Safety</span>
-
 <span>Risk Analysis</span>
-
 <span>Product Management</span>
-
 <span>Security</span>
-
 <span>Research</span>
 
 </div>
 
 </div>
 
-</div>
 <div class="section">
 
-    <h2>View PDF</h2>
+<h2>Project Report</h2>
 
-    <p>
-        Read the complete Guardian Mode case study.
-    </p>
+<p>
+Download the complete Guardian Mode case study.
+</p>
 
-    <a href="Guardian_Mode.pdf" target="_blank" class="project-btn">
-        📄 View PDF →
-    </a>
+<a href="Guardian-Mode-Report.pdf"
+target="_blank"
+class="project-btn">
+
+📄 Download Project Report
+
+</a>
 
 </div>
+
+</div>
+
 </section>
 
 </body>
 
 </html>
-
-<h2>Project Links</h2>
-
-<div class="project-links">
-
-    <a href="Guardian-Mode-Report.pdf"
-       target="_blank"
-       class="btn secondary">
-        📄 Download Project Report
-    </a>
-
-</div>
