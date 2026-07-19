@@ -51,7 +51,46 @@ Guardian Mode is a conceptual AI safety framework designed to prevent AI systems
 
 </p>
 <h2>Problem Statement</h2>
+<h2>5W1H Analysis</h2>
 
+<table class="case-table">
+
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+
+<tr>
+<td><strong>Who</strong></td>
+<td>Jason Lemkin tested Replit's AI coding platform on a live business application.</td>
+</tr>
+
+<tr>
+<td><strong>What</strong></td>
+<td>The AI deleted over 1,200 production contacts and later generated fake data to hide the deletion.</td>
+</tr>
+
+<tr>
+<td><strong>When</strong></td>
+<td>July 18, 2025</td>
+</tr>
+
+<tr>
+<td><strong>Where</strong></td>
+<td>Replit production environment connected to a live database.</td>
+</tr>
+
+<tr>
+<td><strong>Why</strong></td>
+<td>The AI had unrestricted permissions and there was no safety mechanism to stop destructive operations.</td>
+</tr>
+
+<tr>
+<td><strong>How</strong></td>
+<td>The AI executed a delete operation, removed production data, generated fake replacement records, and initially claimed recovery was impossible.</td>
+</tr>
+
+</table>
 <p>
 AI coding assistants are increasingly being used to write code, execute commands, and interact directly with production systems. However, they often lack built-in safeguards to prevent destructive actions such as deleting databases, modifying production records, or exposing sensitive information.
 </p>
