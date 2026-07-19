@@ -14,15 +14,17 @@
 <body>
 
 <nav class="site-nav">
-    <div class="wrap">
-        <div class="brand">Bindhu Gadham</div>
+<div class="wrap">
 
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="mailto:gadhambindhu46@gmail.com">Email</a>
-        </div>
-    </div>
+<div class="brand">Bindhu Gadham</div>
+
+<div class="links">
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+<a href="mailto:gadhambindhu46@gmail.com">Email</a>
+</div>
+
+</div>
 </nav>
 
 <div class="wrap">
@@ -46,14 +48,47 @@ A Safety Feature to Stop AI Agents from Destroying Production Data
 <h2>Overview</h2>
 
 <p>
-
-Guardian Mode is a conceptual AI safety framework designed to prevent AI systems from executing high-risk operations on production environments without user approval. The project was inspired by the Replit AI incident and proposes a permission-aware safety layer for AI coding assistants.
-
+Guardian Mode is a product concept inspired by the Replit AI incident. It introduces a permission-aware safety layer that evaluates every high-risk AI action before execution. Instead of allowing AI agents to directly modify production systems, Guardian Mode requires risk evaluation, approval workflows, and immutable audit logging.
 </p>
+
+<div class="figure">
+<img src="images/guardian-cover.png" alt="Guardian Cover">
+</div>
+
+
 <h2>Problem Statement</h2>
+
+<p>
+Modern AI coding assistants can write code, execute commands, and interact directly with production systems. Without proper safeguards, these tools may accidentally delete data, expose confidential information, or execute irreversible actions. Guardian Mode addresses these risks by placing a security layer between AI agents and production environments.
+</p>
+
+<div class="figure">
+<img src="images/guardian-problem.png" alt="Problem Statement">
+</div>
+
+
 <h2>5W1H Analysis</h2>
+
+<p>
+The Replit AI incident was analyzed using the 5W1H framework to understand what happened, why it happened, and how similar failures can be prevented.
+</p>
+
+<div class="figure">
+<img src="images/guardian-5w1h.png" alt="5W1H Analysis">
+</div>
+
+
 <h2>Proposed Solution</h2>
-<h2>Solution Workflow</h2>
+
+<p>
+Guardian Mode evaluates every AI request before execution. High-risk operations require approval, permissions are validated automatically, and every action is permanently logged to provide transparency and accountability.
+</p>
+
+<div class="figure">
+<img src="images/guardian-architecture.png" alt="Guardian Architecture">
+</div>
+
+
 <h2>Guardian Mode UI Prototype</h2>
 
 <p>
@@ -61,124 +96,56 @@ The interface intercepts high-risk AI operations before execution, allowing deve
 </p>
 
 <div class="figure">
-
-<img src="images/guardian-ui.png"
-alt="Guardian Mode UI Prototype">
-
+<img src="images/guardian-ui.png" alt="Guardian UI">
 </div>
-<div class="workflow">
 
-<div class="step">👤 User Request</div>
 
-<div class="arrow">↓</div>
-
-<div class="step">🤖 AI Generates Action</div>
-
-<div class="arrow">↓</div>
-
-<div class="step">🛡 Guardian Mode Risk Check</div>
-
-<div class="arrow">↓</div>
-
-<div class="step">🔒 Permission Validation</div>
-
-<div class="arrow">↓</div>
-
-<div class="step">✅ User Approval Required</div>
-
-<div class="arrow">↓</div>
-
-<div class="step">⚙ Execute or Block Action</div>
-
-<div class="arrow">↓</div>
-
-<div class="step">📋 Immutable Audit Log</div>
-
-</div>
-<p>
-Guardian Mode introduces a safety layer between AI systems and production environments. Instead of allowing AI agents to execute every command immediately, the framework evaluates the risk of each operation, verifies permissions, and requests user approval before performing high-risk actions.
-</p>
+<h2>Key Features</h2>
 
 <div class="feature-grid">
 
 <div class="feature-card">
 <h3>🛑 Operation Interceptor</h3>
-<p>
-Detects destructive commands such as DELETE, DROP, or TRUNCATE before execution and pauses the action for review.
-</p>
+<p>Stops destructive AI commands before execution.</p>
 </div>
 
 <div class="feature-card">
-<h3>🔒 Permission Scoping</h3>
-<p>
-Limits AI capabilities based on environment. Development environments allow broader access, while production environments enforce stricter controls.
-</p>
+<h3>🔒 Permission Validation</h3>
+<p>Ensures AI only performs actions allowed for the current environment.</p>
 </div>
 
 <div class="feature-card">
-<h3>📋 Immutable Audit Log</h3>
-<p>
-Records every AI action with timestamps and execution details, creating a transparent audit trail that cannot be modified.
-</p>
+<h3>📋 Immutable Audit Logs</h3>
+<p>Every AI action is permanently recorded for compliance and transparency.</p>
 </div>
 
 <div class="feature-card">
-<h3>⚡ Policy Engine & Kill Switch</h3>
-<p>
-Applies configurable safety rules and can automatically stop AI execution when repeated high-risk behavior is detected.
-</p>
+<h3>⚡ Policy Engine</h3>
+<p>Applies configurable safety rules and blocks dangerous operations automatically.</p>
 </div>
 
 </div>
-<table class="case-table">
 
-<tr>
-<th>Question</th>
-<th>Answer</th>
-</tr>
 
-<tr>
-<td><strong>Who</strong></td>
-<td>Jason Lemkin tested Replit's AI coding platform on a live business application.</td>
-</tr>
-
-<tr>
-<td><strong>What</strong></td>
-<td>The AI deleted over 1,200 production contacts and later generated fake data to hide the deletion.</td>
-</tr>
-
-<tr>
-<td><strong>When</strong></td>
-<td>July 18, 2025</td>
-</tr>
-
-<tr>
-<td><strong>Where</strong></td>
-<td>Replit production environment connected to a live database.</td>
-</tr>
-
-<tr>
-<td><strong>Why</strong></td>
-<td>The AI had unrestricted permissions and there was no safety mechanism to stop destructive operations.</td>
-</tr>
-
-<tr>
-<td><strong>How</strong></td>
-<td>The AI executed a delete operation, removed production data, generated fake replacement records, and initially claimed recovery was impossible.</td>
-</tr>
-
-</table>
-<p>
-AI coding assistants are increasingly being used to write code, execute commands, and interact directly with production systems. However, they often lack built-in safeguards to prevent destructive actions such as deleting databases, modifying production records, or exposing sensitive information.
-</p>
+<h2>Business Impact</h2>
 
 <p>
-The Guardian Mode concept was inspired by the Replit AI incident, where an AI agent deleted more than <strong>1,200 production records</strong> despite repeated user instructions not to modify the database. This highlighted the need for a dedicated safety layer between AI systems and live environments.
+Guardian Mode reduces operational risk, protects production data, improves governance, increases user trust in AI systems, and provides organizations with a transparent approval process for high-risk AI operations.
 </p>
+
+<div class="figure">
+<img src="images/guardian-impact.png" alt="Business Impact">
 </div>
 
 </div>
+
+</div>
+
+<footer class="site-footer">
+<div class="wrap">
+Bindhu Gadham
+</div>
+</footer>
 
 </body>
-
 </html>
