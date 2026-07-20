@@ -243,3 +243,49 @@ To evaluate whether Guardian Mode is successful, the platform should track the f
 </li>
 
 </ul>
+
+    <h2>Risks and Trade-offs</h2>
+
+<p>
+While Guardian Mode provides an important safety layer for AI-powered development, it also introduces several trade-offs that should be considered during implementation.
+</p>
+
+<h3>1. It May Slow Down Developers</h3>
+
+<p>
+Every approval step adds a small amount of extra time. Developers working under tight deadlines may disable Guardian Mode or configure less restrictive policies to avoid repeated confirmation prompts. A safety feature that is frequently turned off cannot effectively protect production systems.
+</p>
+
+<p>
+To reduce this risk, the approval process should be quick and intuitive. Developers should also be able to pre-approve trusted workflows so they are not interrupted for routine operations.
+</p>
+
+<h3>2. It May Block Legitimate Operations</h3>
+
+<p>
+Some high-risk operations are intentional, such as deleting outdated records during scheduled maintenance. Guardian Mode may temporarily block these actions, creating unnecessary friction for developers.
+</p>
+
+<p>
+This can be addressed by allowing developers to register approved maintenance tasks with an expiration time, enabling planned operations while maintaining security.
+</p>
+
+<h3>3. It Does Not Fully Understand Context</h3>
+
+<p>
+Guardian Mode evaluates the command itself rather than the developer's intent. As a result, a planned deletion and an accidental deletion may appear identical. The system cannot always determine whether an operation is appropriate.
+</p>
+
+<p>
+Future versions could integrate with the AI assistant's planning process to better understand why a command is being executed before making a decision.
+</p>
+
+<h3>4. It Does Not Cover Every System</h3>
+
+<p>
+The initial version of Guardian Mode focuses on protecting databases and files. It does not yet monitor external APIs, cloud infrastructure, messaging systems, or other connected services that may also be affected by AI agents.
+</p>
+
+<p>
+Support for additional production systems can be introduced in future releases as the platform evolves.
+</p>
