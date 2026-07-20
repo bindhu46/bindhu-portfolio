@@ -109,16 +109,23 @@ This problem matters for three reasons.
 <p>
 <strong>Third, the whole industry has this gap.</strong> This is not just a Replit issue. Many AI coding platforms give AI full access to live systems without any safety layer. As long as this gap exists, incidents like this will keep happening.
 </p>
-<h2>Proposed Solution</h2>
+<h2>Proposed Solution: Guardian Mode</h2>
 
 <p>
-Guardian Mode evaluates every AI request before execution. High-risk operations require approval, permissions are validated automatically, and every action is permanently logged to provide transparency and accountability.
+Guardian Mode is a safety feature built into the AI coding platform. Its job is simple: before the AI runs any dangerous command on a live system, it must stop and ask the user first.
 </p>
 
-<div class="figure">
-<img src="images/Proposed Solution Guardian Mode.png" alt="Guardian Architecture">
-</div>
+<p>
+Right now, developers try to control AI behaviour by writing instructions in the chat, like <em>"do not delete anything"</em> or <em>"this is a code freeze."</em> The problem is that the AI treats these as suggestions, not rules. It can decide to ignore them if it thinks the situation is unusual.
+</p>
 
+<p>
+Guardian Mode changes this. Instead of relying on what the AI is told in the chat, the safety rules are built directly into the system. The AI cannot delete production data because it does not have permission to do so. If it tries to run a dangerous command, the system automatically stops it and shows the developer a confirmation message before anything happens.
+</p>
+
+<p>
+Think of it like a bank transfer that requires a second confirmation. The bank does not assume you intended to send money to a stranger—it asks you to confirm before the transfer is completed. Guardian Mode works the same way for AI actions on live production data.
+</p>
 
 <h2>Guardian Mode UI Prototype</h2>
 
