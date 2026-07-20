@@ -1,994 +1,234 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Taskivoo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bindhu Gadham | Portfolio</title>
 
-<!-- PWA install -->
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#F4F0E6">
-<meta name="background-color" content="#F4F0E6">
+    <link rel="stylesheet" href="style.css">
 
-<!-- iOS home-screen support -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Taskivoo">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<link rel="icon" href="icons/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
-  html, body { margin: 0; padding: 0; background: #F4F0E6; }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- TASKIVOO — job application tracker, warm editorial / journal concept -->
-<div id="taskivoo-root">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<nav>
+    <div class="logo">Bindhu</div>
 
-  <style>
-    #taskivoo-root {
-      --paper: #F4F0E6;
-      --paper-raised: #EFE9DA;
-      --ink: #2B2318;
-      --ink-soft: #8A7A5C;
-      --ink-faint: #B3A588;
-      --rule: #D9CFB8;
-      --rule-strong: #C7BA9C;
-      --accent: #B5602F;
-      --accent-soft: #E9D9C4;
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-      --wishlist: #8A7A5C;
-      --applied: #4C6E8C;
-      --interview: #B5602F;
-      --offer: #4C7A5A;
-      --rejected: #A6483F;
+<header class="hero">
 
-      font-family: 'Inter', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      min-height: 100%;
-      -webkit-font-smoothing: antialiased;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    #taskivoo-root.tk-dark {
-      --paper: #1E1A14;
-      --paper-raised: #262019;
-      --ink: #EDE6D6;
-      --ink-soft: #B0A487;
-      --ink-faint: #756B54;
-      --rule: #3A3226;
-      --rule-strong: #4C4232;
-      --accent: #E08A52;
-      --accent-soft: #3C2C1E;
-
-      --wishlist: #A69878;
-      --applied: #85AFD1;
-      --interview: #E08A52;
-      --offer: #7BC49A;
-      --rejected: #E2897E;
-    }
-    #taskivoo-root * { transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
-    #taskivoo-root *, #taskivoo-root *::before, #taskivoo-root *::after { box-sizing: border-box; }
-    #taskivoo-root button { font-family: inherit; cursor: pointer; }
-    #taskivoo-root input, #taskivoo-root select, #taskivoo-root textarea { font-family: inherit; }
-
-    .tk-wrap { max-width: 720px; margin: 0 auto; padding: 52px 24px 80px; }
-
-    /* ---------- Header ---------- */
-    .tk-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      gap: 16px; flex-wrap: wrap; margin-bottom: 4px;
-    }
-    .tk-logo {
-      font-family: 'Fraunces', serif;
-      font-weight: 500; font-style: italic;
-      font-size: 36px;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .tk-tagline {
-      font-style: italic;
-      font-size: 13.5px; color: var(--ink-soft); margin-top: 7px;
-    }
-    .tk-new-btn {
-      background: none; color: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: 3px;
-      padding: 9px 16px; font-size: 12.5px; font-weight: 600;
-      font-family: 'Fraunces', serif; font-style: italic;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    .tk-new-btn:hover { background: var(--accent); color: #fff; }
-
-    .tk-logo-row { display: flex; align-items: baseline; gap: 8px; }
-    .tk-header-actions { display: flex; align-items: center; gap: 14px; }
-    .tk-theme-toggle {
-      background: none; border: none;
-      color: var(--ink-faint); font-size: 13px;
-      padding: 2px 4px; opacity: 0.5;
-    }
-    .tk-theme-toggle:hover { opacity: 1; color: var(--ink-soft); }
-
-    /* ---------- Stats ---------- */
-    .tk-stats {
-      display: flex; flex-wrap: wrap; gap: 4px 22px;
-      margin: 22px 0 26px;
-      padding: 12px 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
-    .tk-stat {
-      background: none; border: none; padding: 2px 0;
-      font-size: 12.5px; color: var(--ink-soft);
-      border-bottom: 1px solid transparent;
-    }
-    .tk-stat b {
-      font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
-      color: var(--ink); font-size: 15px; margin-right: 4px;
-    }
-    .tk-stat.tk-active { color: var(--accent); border-bottom-color: var(--accent); }
-    .tk-stat.tk-active b { color: var(--accent); }
-    .tk-stat:not(.tk-active):hover { color: var(--ink); }
-    .tk-stat-followup { color: var(--accent); }
-    .tk-stat-followup b { color: var(--accent); }
-    .tk-stat-followup.tk-active { text-decoration: underline; }
-
-    /* ---------- Form ---------- */
-    .tk-form {
-      background: var(--paper-raised);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 22px;
-      margin-bottom: 30px;
-      display: none;
-    }
-    .tk-form.tk-open { display: block; animation: tk-fade-in 0.18s ease; }
-    @keyframes tk-fade-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-    .tk-form-title {
-      font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
-      font-size: 18px; color: var(--ink); margin-bottom: 16px;
-    }
-    .tk-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .tk-field { display: flex; flex-direction: column; gap: 6px; }
-    .tk-field.tk-span2 { grid-column: 1 / -1; }
-    .tk-field label { font-size: 11px; font-weight: 600; color: var(--ink-soft); letter-spacing: 0.02em; }
-    .tk-field input, .tk-field select, .tk-field textarea {
-      background: var(--paper);
-      border: 1px solid var(--rule-strong);
-      border-radius: 3px;
-      color: var(--ink);
-      padding: 9px 11px;
-      font-size: 13.5px;
-      outline: none;
-      transition: border-color 0.15s ease;
-    }
-    .tk-field textarea { resize: vertical; min-height: 56px; }
-    .tk-field input:focus, .tk-field select:focus, .tk-field textarea:focus { border-color: var(--accent); }
-    .tk-form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
-    .tk-btn { border: none; border-radius: 3px; padding: 9px 18px; font-size: 12.5px; font-weight: 600; font-family: 'Fraunces', serif; font-style: italic; }
-    .tk-btn-primary { background: var(--accent); color: #fff; }
-    .tk-btn-primary:hover { background: #9B4F26; }
-    .tk-btn-ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule-strong); }
-    .tk-btn-ghost:hover { color: var(--ink); border-color: var(--ink-faint); }
-
-    /* ---------- Filters ---------- */
-    .tk-search-row { margin-bottom: 14px; }
-    .tk-search {
-      width: 100%;
-      background: var(--card, #fff);
-      border: 1px solid var(--rule-strong);
-      border-radius: 3px;
-      padding: 9px 12px;
-      font-size: 13px;
-      color: var(--ink);
-      outline: none;
-      font-family: 'Inter', sans-serif;
-    }
-    .tk-search:focus { border-color: var(--accent); }
-    .tk-search::placeholder { color: var(--ink-faint); font-style: italic; }
-
-    .tk-filters { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 22px; }
-    .tk-filter {
-      background: none; border: none; color: var(--ink-soft);
-      padding: 2px 0; font-size: 12.5px; font-style: italic;
-      font-family: 'Fraunces', serif; border-bottom: 1px solid transparent;
-    }
-    .tk-filter.tk-filter-active { color: var(--accent); border-bottom-color: var(--accent); }
-    .tk-filter:not(.tk-filter-active):hover { color: var(--ink); }
-
-    /* ---------- Rows (journal entries) ---------- */
-    .tk-row {
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
-      padding: 16px 2px;
-      border-bottom: 1px dashed var(--rule-strong);
-    }
-    .tk-row:first-child { border-top: 1px dashed var(--rule-strong); }
-    .tk-row.tk-needs-followup {
-      background: var(--accent-soft);
-      margin: 0 -14px; padding: 16px 14px;
-      border-radius: 4px; border-bottom: 1px dashed var(--rule-strong);
-    }
-    .tk-followup-note {
-      font-size: 11px; font-style: italic; color: var(--accent); margin-top: 6px;
-    }
-    .tk-interview-note {
-      font-size: 11px; font-style: italic; color: var(--applied); margin-top: 6px;
-    }
-    .tk-round-tag {
-      font-size: 10.5px; font-style: italic; color: var(--ink-soft);
-      font-family: 'Inter', sans-serif;
-    }
-    .tk-row-actions { display: flex; gap: 4px; }
-    .tk-archive {
-      background: none; border: none; color: var(--ink-faint);
-      font-size: 13px; line-height: 1; padding: 2px 4px;
-    }
-    .tk-archive:hover { color: var(--accent); }
-    .tk-notes-details { margin-top: 8px; }
-    .tk-notes-details summary {
-      cursor: pointer; font-size: 11px; color: var(--ink-faint);
-      list-style: none; font-style: italic; user-select: none;
-    }
-    .tk-notes-details summary::-webkit-details-marker { display: none; }
-    .tk-notes-details summary::before { content: "▸ "; }
-    .tk-notes-details[open] summary::before { content: "▾ "; }
-    .tk-notes-details summary:hover { color: var(--accent); }
-    .tk-notes-body {
-      margin-top: 6px; padding: 8px 12px;
-      background: var(--paper-raised); border-left: 2px solid var(--rule-strong);
-      font-size: 12px; color: var(--ink-soft); font-style: italic;
-      white-space: pre-wrap; line-height: 1.5;
-    }
-    .tk-row-main { min-width: 0; }
-    .tk-row-company { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--ink); }
-    .tk-row-role { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-    .tk-row-meta {
-      display: flex; flex-wrap: wrap; gap: 3px 12px; margin-top: 7px;
-      font-size: 11px; color: var(--ink-faint);
-      font-family: 'IBM Plex Mono', monospace;
-    }
-    .tk-row-meta a { color: var(--ink-faint); text-decoration: none; border-bottom: 1px dotted var(--ink-faint); }
-    .tk-row-meta a:hover { color: var(--accent); border-color: var(--accent); }
-
-    .tk-row-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-    .tk-status-pill {
-      font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
-      font-size: 12.5px;
-      color: var(--pill-fg, var(--wishlist));
-      border: 1px solid var(--pill-fg, var(--wishlist));
-      padding: 3px 12px; border-radius: 2px;
-      transition: opacity 0.15s ease;
-    }
-    .tk-status-pill.tk-pulsing { animation: tk-pulse 0.35s ease; }
-    @keyframes tk-pulse { 0% { opacity: 0.3; } 100% { opacity: 1; } }
-
-    .tk-status-select {
-      background: transparent; border: none; color: var(--ink-faint);
-      font-size: 10.5px; padding: 2px 0; text-align: right; font-style: italic;
-    }
-
-    .tk-delete {
-      background: none; border: none; color: var(--ink-faint);
-      font-size: 14px; line-height: 1; padding: 2px 4px;
-    }
-    .tk-delete:hover { color: var(--rejected); }
-
-    .tk-empty {
-      text-align: center; padding: 60px 20px;
-      border: 1px dashed var(--rule-strong); border-radius: 4px;
-      margin-top: 8px;
-    }
-    .tk-empty-title {
-      font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
-      color: var(--ink); font-size: 19px; margin-bottom: 6px;
-    }
-    .tk-empty-sub { color: var(--ink-soft); font-size: 13px; font-style: italic; }
-
-    .tk-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--rule);
-      font-size: 11.5px; color: var(--ink-faint); font-style: italic;
-      flex-wrap: wrap; gap: 8px;
-    }
-    .tk-footer-actions { display: flex; align-items: center; gap: 8px; }
-    .tk-footer-sep { color: var(--rule-strong); font-style: normal; }
-    .tk-clear-btn { background: none; border: none; color: var(--ink-faint); text-decoration: underline; font-size: 11.5px; font-style: italic; font-family: inherit; }
-    .tk-clear-btn:hover { color: var(--rejected); }
-    #tk-export:hover, #tk-import:hover { color: var(--accent); }
-
-    /* ---------- Export/Import modal ---------- */
-    .tk-modal-backdrop {
-      display: none;
-      position: fixed; inset: 0; background: rgba(43,35,24,0.42);
-      align-items: center; justify-content: center; padding: 20px; z-index: 1000;
-    }
-    .tk-modal-backdrop.tk-open { display: flex; }
-    .tk-modal {
-      background: var(--paper); border: 1px solid var(--rule-strong);
-      border-radius: 6px; padding: 24px; width: 100%; max-width: 480px;
-      box-shadow: 0 12px 32px rgba(43,35,24,0.22);
-    }
-    .tk-modal-title {
-      font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
-      font-size: 18px; color: var(--ink); margin-bottom: 6px;
-    }
-    .tk-modal-sub { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 14px; }
-    .tk-modal-textarea {
-      width: 100%; min-height: 140px; resize: vertical;
-      background: var(--paper-raised); border: 1px solid var(--rule-strong);
-      border-radius: 3px; padding: 10px 12px; font-size: 12px;
-      font-family: 'IBM Plex Mono', monospace; color: var(--ink);
-      outline: none;
-    }
-    .tk-modal-textarea:focus { border-color: var(--accent); }
-    .tk-modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
-    .tk-modal-msg { font-size: 11.5px; color: var(--offer); margin-top: 10px; min-height: 14px; font-style: italic; }
-    .tk-modal-msg.tk-error { color: var(--rejected); }
-
-    /* ---------- Mobile ---------- */
-    @media (max-width: 640px) {
-      .tk-form-grid { grid-template-columns: 1fr; }
-      .tk-row { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .tk-row-side { flex-direction: row; align-items: center; width: 100%; justify-content: space-between; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .tk-status-pill.tk-pulsing { animation: none; }
-      .tk-form.tk-open { animation: none; }
-    }
-
-    #taskivoo-root a:focus-visible,
-    #taskivoo-root button:focus-visible,
-    #taskivoo-root input:focus-visible,
-    #taskivoo-root select:focus-visible,
-    #taskivoo-root textarea:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-  </style>
-
-  <div class="tk-wrap">
-    <div class="tk-header">
-      <div>
-        <div class="tk-logo-row">
-          <div class="tk-logo">Taskivoo</div>
-          <button class="tk-theme-toggle" id="tk-theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button>
-        </div>
-        <div class="tk-tagline">a running record of the search</div>
-      </div>
-      <div class="tk-header-actions">
-        <button class="tk-new-btn" id="tk-add-toggle" type="button">+ New entry</button>
-      </div>
+    <div class="hero-image">
+        <img src="images/profile.jpg" alt="Bindhu Gadham" class="profile-photo">
     </div>
 
-    <div class="tk-stats" id="tk-stats"></div>
+    <div class="hero-content">
 
-    <div class="tk-form" id="tk-form">
-      <div class="tk-form-title">Log an application</div>
-      <div class="tk-form-grid">
-        <div class="tk-field">
-          <label for="tk-f-company">Company</label>
-          <input id="tk-f-company" type="text" placeholder="e.g. Acme Corp" />
+        <h1>Bindhu Gadham</h1>
+
+        <h2>Turning Data into Actionable Insights.</h2>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn primary">
+                View Resume
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Contact
+            </a>
+
         </div>
-        <div class="tk-field">
-          <label for="tk-f-role">Role</label>
-          <input id="tk-f-role" type="text" placeholder="e.g. Frontend Engineer" />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-status">Status</label>
-          <select id="tk-f-status">
-            <option value="WISHLIST">Wishlist</option>
-            <option value="APPLIED" selected>Applied</option>
-            <option value="INTERVIEW">Interview</option>
-            <option value="OFFER">Offer</option>
-            <option value="REJECTED">Rejected</option>
-          </select>
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-date">Date applied</label>
-          <input id="tk-f-date" type="date" />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-salary">Salary / notes on pay</label>
-          <input id="tk-f-salary" type="text" placeholder="e.g. $120k–140k" />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-link">Posting link</label>
-          <input id="tk-f-link" type="text" placeholder="https://..." />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-contact">Recruiter / contact</label>
-          <input id="tk-f-contact" type="text" placeholder="e.g. Sarah Lee, sarah@acme.com" />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-round">Interview round</label>
-          <input id="tk-f-round" type="text" placeholder="e.g. Round 2 of 3" />
-        </div>
-        <div class="tk-field">
-          <label for="tk-f-interview-date">Next interview date</label>
-          <input id="tk-f-interview-date" type="date" />
-        </div>
-        <div class="tk-field tk-span2">
-          <label for="tk-f-notes">Notes</label>
-          <textarea id="tk-f-notes" placeholder="Referral, recruiter contact, interview prep..."></textarea>
-        </div>
-      </div>
-      <div class="tk-form-actions">
-        <button class="tk-btn tk-btn-ghost" id="tk-cancel" type="button">Cancel</button>
-        <button class="tk-btn tk-btn-primary" id="tk-save" type="button">Add entry</button>
-      </div>
+
     </div>
 
-    <div class="tk-search-row">
-      <input class="tk-search" id="tk-search" type="text" placeholder="Search by company or role..." />
-    </div>
+</header>
 
-    <div class="tk-filters" id="tk-filters"></div>
+<section id="about">
 
-    <div id="tk-board"></div>
+<h3>About Me</h3>
 
-    <div class="tk-footer">
-      <span id="tk-footer-count"></span>
-      <div class="tk-footer-actions">
-        <button class="tk-clear-btn" id="tk-export" type="button">Export</button>
-        <span class="tk-footer-sep">·</span>
-        <button class="tk-clear-btn" id="tk-import" type="button">Import</button>
-        <span class="tk-footer-sep">·</span>
-        <button class="tk-clear-btn" id="tk-clear-all" type="button">Clear all data</button>
-      </div>
-    </div>
+<div class="card">
 
-    <div class="tk-modal-backdrop" id="tk-modal-backdrop">
-      <div class="tk-modal">
-        <div class="tk-modal-title" id="tk-modal-title">Export your record</div>
-        <div class="tk-modal-sub" id="tk-modal-sub">Copy this text, then paste it into Import on your other device.</div>
-        <textarea class="tk-modal-textarea" id="tk-modal-textarea" spellcheck="false"></textarea>
-        <div class="tk-modal-actions">
-          <button class="tk-btn tk-btn-ghost" id="tk-modal-cancel" type="button">Close</button>
-          <button class="tk-btn tk-btn-primary" id="tk-modal-primary" type="button">Copy to clipboard</button>
-        </div>
-        <div class="tk-modal-msg" id="tk-modal-msg"></div>
-      </div>
-    </div>
-  </div>
+<p>
+Master of Science graduate with a passion for analytics, business intelligence, and data visualization. I enjoy using SQL, Python, Excel, Tableau, and Power BI to uncover insights, solve business problems, and support data-driven decision-making.
+</p>
+
 </div>
 
-<script>
-(function () {
-  const STATUSES = ["WISHLIST", "APPLIED", "INTERVIEW", "OFFER", "REJECTED"];
-  const STATUS_META = {
-    WISHLIST:  { label: "Wishlist",  varName: "wishlist",  fg: "#8A7A5C" },
-    APPLIED:   { label: "Applied",   varName: "applied",   fg: "#4C6E8C" },
-    INTERVIEW: { label: "Interview", varName: "interview", fg: "#B5602F" },
-    OFFER:     { label: "Offer",     varName: "offer",     fg: "#4C7A5A" },
-    REJECTED:  { label: "Rejected",  varName: "rejected",  fg: "#A6483F" },
-  };
-  const STORAGE_KEY = "taskivoo:applications";
+</section>
 
-  let apps = [];
-  let activeFilter = "ALL";
-  let searchQuery = "";
-  let loaded = false;
+    </div>
+    <section id="certifications">
 
-  const root = document.getElementById("taskivoo-root");
-  const $ = (sel) => root.querySelector(sel);
+    <h3>Certifications</h3>
 
-  const statsEl = $("#tk-stats");
-  const filtersEl = $("#tk-filters");
-  const boardEl = $("#tk-board");
-  const formEl = $("#tk-form");
-  const addToggleEl = $("#tk-add-toggle");
-  const footerCountEl = $("#tk-footer-count");
+    <div class="card">
 
-  // ---------- storage ----------
-  // Uses Claude.ai's persistent storage when available (inside an artifact);
-  // falls back to localStorage when run as a standalone file/app.
-  const hasClaudeStorage = typeof window.storage !== "undefined" && window.storage && typeof window.storage.get === "function";
+        <h4>Google Data Analytics Professional Certificate</h4>
 
-  async function loadApps() {
-    try {
-      if (hasClaudeStorage) {
-        const res = await window.storage.get(STORAGE_KEY, false);
-        apps = res && res.value ? JSON.parse(res.value) : [];
-      } else {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        apps = raw ? JSON.parse(raw) : [];
-      }
-    } catch (e) {
-      apps = [];
-    }
-    loaded = true;
-    render();
-  }
+        <p>
+            Issued by Google through Coursera.
+        </p>
 
-  async function saveApps() {
-    try {
-      if (hasClaudeStorage) {
-        await window.storage.set(STORAGE_KEY, JSON.stringify(apps), false);
-      } else {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(apps));
-      }
-    } catch (e) {
-      console.error("Taskivoo: could not save", e);
-    }
-  }
+        <br>
 
-  // ---------- rendering ----------
-  function isFollowUp(app) {
-    const d = daysSince(app.dateApplied);
-    return app.status === "APPLIED" && d !== null && d >= FOLLOW_UP_DAYS;
-  }
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/UYATOOECWAUU"
+        target="_blank"
+        class="btn primary">
+            View Certificate
+        </a>
 
-  function statusCounts() {
-    const active = apps.filter((a) => !a.archived);
-    const counts = { ALL: active.length, FOLLOWUP: 0 };
-    STATUSES.forEach((s) => (counts[s] = 0));
-    active.forEach((a) => {
-      counts[a.status] = (counts[a.status] || 0) + 1;
-      if (isFollowUp(a)) counts.FOLLOWUP++;
-    });
-    return counts;
-  }
+    </div>
 
-  function renderStats() {
-    const counts = statusCounts();
-    statsEl.innerHTML = "";
+</section>
 
-    const total = document.createElement("button");
-    total.className = "tk-stat" + (activeFilter === "ALL" ? " tk-active" : "");
-    total.innerHTML = `<b>${counts.ALL}</b>logged`;
-    total.addEventListener("click", () => { activeFilter = "ALL"; render(); });
-    statsEl.appendChild(total);
 
-    STATUSES.forEach((s) => {
-      const meta = STATUS_META[s];
-      const btn = document.createElement("button");
-      btn.className = "tk-stat" + (activeFilter === s ? " tk-active" : "");
-      btn.innerHTML = `<b>${counts[s] || 0}</b>${meta.label.toLowerCase()}`;
-      btn.addEventListener("click", () => { activeFilter = s; render(); });
-      statsEl.appendChild(btn);
-    });
+<section id="projects">
 
-    if (counts.FOLLOWUP > 0) {
-      const fu = document.createElement("button");
-      fu.className = "tk-stat tk-stat-followup" + (activeFilter === "FOLLOWUP" ? " tk-active" : "");
-      fu.innerHTML = `<b>${counts.FOLLOWUP}</b>need${counts.FOLLOWUP === 1 ? "s" : ""} follow-up`;
-      fu.addEventListener("click", () => { activeFilter = "FOLLOWUP"; render(); });
-      statsEl.appendChild(fu);
-    }
-  }
+    <h3>Featured Projects</h3>
 
-  function renderFilters() {
-    const items = ["ALL", ...STATUSES, "ARCHIVED"];
-    filtersEl.innerHTML = "";
-    items.forEach((s) => {
-      const btn = document.createElement("button");
-      btn.className = "tk-filter" + (activeFilter === s ? " tk-filter-active" : "");
-      btn.type = "button";
-      btn.textContent = s === "ALL" ? "All" : s === "ARCHIVED" ? "Archived" : STATUS_META[s].label;
-      btn.addEventListener("click", () => { activeFilter = s; render(); });
-      filtersEl.appendChild(btn);
-    });
-  }
+    <div class="projects">
 
-  function fmtDate(dstr) {
-    if (!dstr) return "no date";
-    const d = new Date(dstr + "T00:00:00");
-    if (isNaN(d)) return dstr;
-    return d.toLocaleDateString([], { day: "2-digit", month: "short", year: "numeric" });
-  }
+        <div class="project-card">
 
-  const FOLLOW_UP_DAYS = 10;
+    <div class="project-number">01</div>
 
-  function daysSince(dstr) {
-    if (!dstr) return null;
-    const d = new Date(dstr + "T00:00:00");
-    if (isNaN(d)) return null;
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const diff = Math.round((today - d) / 86400000);
-    return diff >= 0 ? diff : null;
-  }
+    <h4>🚀 Taskivoo</h4>
 
-  function daysLabel(n) {
-    if (n === 0) return "today";
-    if (n === 1) return "1 day ago";
-    return `${n} days ago`;
-  }
+    <p class="project-short">
+        A lightweight personal job application tracker built to organize applications, interviews, follow-ups, and career progress in one place.
+    </p>
 
-  function escapeHtml(str) {
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
-  }
-  function escapeAttr(str) {
-    return String(str).replace(/"/g, "&quot;");
-  }
+   <div class="tech">
 
-  function renderBoard() {
-    let filtered;
-    if (activeFilter === "ARCHIVED") {
-      filtered = apps.filter((a) => a.archived);
-    } else if (activeFilter === "FOLLOWUP") {
-      filtered = apps.filter((a) => !a.archived && isFollowUp(a));
-    } else if (activeFilter === "ALL") {
-      filtered = apps.filter((a) => !a.archived);
-    } else {
-      filtered = apps.filter((a) => !a.archived && a.status === activeFilter);
-    }
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PWA</span>
+    <span>LocalStorage</span>
 
-    const q = searchQuery.trim().toLowerCase();
-    if (q) {
-      filtered = filtered.filter((a) =>
-        (a.company || "").toLowerCase().includes(q) || (a.role || "").toLowerCase().includes(q)
-      );
-    }
+</div>
+    <a href="https://tranquil-pasca-6081a1.netlify.app"
+   target="_blank"
+   class="demo">
+   Open Live Demo →
+</a>
+<a href="taskivoo.html" class="project-btn">
+    View Case Study →
+</a>
+</div>
 
-    boardEl.innerHTML = "";
-    const activeCount = apps.filter((a) => !a.archived).length;
-    footerCountEl.textContent = activeCount === 0 ? "" : `${activeCount} entr${activeCount === 1 ? "y" : "ies"} in the record`;
+        </div>
 
-    if (filtered.length === 0) {
-      const empty = document.createElement("div");
-      empty.className = "tk-empty";
-      empty.innerHTML = apps.length === 0
-        ? `<div class="tk-empty-title">The record is blank</div><div class="tk-empty-sub">Add your first entry to begin.</div>`
-        : q
-        ? `<div class="tk-empty-title">No matches</div><div class="tk-empty-sub">Nothing found for "${escapeHtml(searchQuery)}".</div>`
-        : `<div class="tk-empty-title">Nothing filed here</div><div class="tk-empty-sub">Try a different filter, or log a new entry.</div>`;
-      boardEl.appendChild(empty);
-      return;
-    }
+        <div class="project-card">
 
-    filtered
-      .slice()
-      .sort((a, b) => (b.dateApplied || "").localeCompare(a.dateApplied || ""))
-      .forEach((app) => {
-        const meta = STATUS_META[app.status];
-        const dSince = daysSince(app.dateApplied);
-        const needsFollowUp = isFollowUp(app);
-        const row = document.createElement("div");
-        row.className = "tk-row" + (needsFollowUp ? " tk-needs-followup" : "");
-        row.innerHTML = `
-          <div class="tk-row-main">
-            <div class="tk-row-company">${escapeHtml(app.company || "Untitled company")}${app.round ? ` <span class="tk-round-tag">${escapeHtml(app.round)}</span>` : ""}</div>
-            <div class="tk-row-role">${escapeHtml(app.role || "—")}</div>
-            <div class="tk-row-meta">
-              <span>${fmtDate(app.dateApplied)}${dSince !== null ? ` · ${daysLabel(dSince)}` : ""}</span>
-              ${app.salary ? `<span>${escapeHtml(app.salary)}</span>` : ""}
-              ${app.contact ? `<span>${escapeHtml(app.contact)}</span>` : ""}
-              ${app.link ? `<a href="${escapeAttr(app.link)}" target="_blank" rel="noopener noreferrer">posting ↗</a>` : ""}
-              ${app.interviewDate ? `<a href="#" data-ics="${app.id}">add interview to calendar ↓</a>` : ""}
+            <div class="project-number">
+                02
             </div>
-            ${app.interviewDate ? `<div class="tk-interview-note">interview on ${fmtDate(app.interviewDate)}</div>` : ""}
-            ${needsFollowUp ? `<div class="tk-followup-note">worth a follow-up — it's been ${daysLabel(dSince)} since you applied</div>` : ""}
-            ${app.notes ? `<details class="tk-notes-details"><summary>notes</summary><div class="tk-notes-body">${escapeHtml(app.notes)}</div></details>` : ""}
-          </div>
-          <div class="tk-row-side">
-            <span class="tk-status-pill" data-pill="${app.id}" style="--pill-fg:${meta.fg}">${meta.label}</span>
-            <select class="tk-status-select" data-select="${app.id}">
-              ${STATUSES.map((s) => `<option value="${s}" ${s === app.status ? "selected" : ""}>${STATUS_META[s].label}</option>`).join("")}
-            </select>
-            <div class="tk-row-actions">
-              <button class="tk-archive" data-archive="${app.id}" title="${app.archived ? 'Restore entry' : 'Archive entry'}" aria-label="${app.archived ? 'Restore entry' : 'Archive entry'}">${app.archived ? "↺" : "▤"}</button>
-              <button class="tk-delete" data-delete="${app.id}" title="Remove entry" aria-label="Remove entry">✕</button>
+
+            <h4>📊 Retail Sales Analysis</h4>
+
+          <p>
+End-to-end retail sales analysis using SQL, MySQL, Excel, and Power BI to uncover business insights, profitability trends, and KPI performance from 9,800+ sales records.
+</p>
+
+            <div class="tech">
+
+    <span>SQL</span>
+    <span>MySQL</span>
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>Business Analysis</span>
+
+</div>
+<a href="retail-sales.html" class="project-btn">
+    View Case Study →
+</a>
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-number">
+                03
             </div>
-          </div>
-        `;
-        boardEl.appendChild(row);
 
-        row.querySelector(`[data-select="${app.id}"]`).addEventListener("change", (e) => {
-          updateStatus(app.id, e.target.value);
-        });
-        row.querySelector(`[data-delete="${app.id}"]`).addEventListener("click", () => {
-          deleteApp(app.id);
-        });
-        row.querySelector(`[data-archive="${app.id}"]`).addEventListener("click", () => {
-          toggleArchive(app.id);
-        });
-        const icsLink = row.querySelector(`[data-ics="${app.id}"]`);
-        if (icsLink) {
-          icsLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            downloadIcs(app);
-          });
-        }
-      });
-  }
+            <h4>🛡 Guardian Mode</h4>
 
-  function render() {
-    if (!loaded) return;
-    renderStats();
-    renderFilters();
-    renderBoard();
-  }
+            <p>
 
-  // ---------- actions ----------
-  function updateStatus(id, newStatus) {
-    const app = apps.find((a) => a.id === id);
-    if (!app || app.status === newStatus) return;
-    app.status = newStatus;
-    saveApps();
-    const meta = STATUS_META[newStatus];
-    const pill = boardEl.querySelector(`[data-pill="${id}"]`);
-    pill.style.setProperty("--pill-fg", meta.fg);
-    pill.textContent = meta.label;
-    pill.classList.remove("tk-pulsing");
-    void pill.offsetWidth;
-    pill.classList.add("tk-pulsing");
-    renderStats();
-  }
+                AI safety framework focused on permissions,
+                audit logging,
+                and operational risk management.
 
-  function deleteApp(id) {
-    apps = apps.filter((a) => a.id !== id);
-    saveApps();
-    render();
-  }
+            </p>
 
-  function toggleArchive(id) {
-    const app = apps.find((a) => a.id === id);
-    if (!app) return;
-    app.archived = !app.archived;
-    saveApps();
-    render();
-  }
+            <div class="tech">
 
-  function icsEscape(str) {
-    return String(str).replace(/[\\;,]/g, (m) => "\\" + m).replace(/\n/g, "\\n");
-  }
+                <span>AI</span>
+                <span>Security</span>
+                <span>Research</span>
+                <span>Risk</span>
 
-  function downloadIcs(app) {
-    const d = app.interviewDate.replace(/-/g, "");
-    const uid = app.id + "@taskivoo";
-    const summary = `Interview: ${app.company || "Untitled company"}${app.role ? " — " + app.role : ""}`;
-    const desc = [app.round, app.contact].filter(Boolean).join(" · ");
-    const ics = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//Taskivoo//EN",
-      "BEGIN:VEVENT",
-      `UID:${uid}`,
-      `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z`,
-      `DTSTART;VALUE=DATE:${d}`,
-      `DTEND;VALUE=DATE:${d}`,
-      `SUMMARY:${icsEscape(summary)}`,
-      desc ? `DESCRIPTION:${icsEscape(desc)}` : "",
-      "END:VEVENT",
-      "END:VCALENDAR",
-    ].filter(Boolean).join("\r\n");
+            </div>
+<div class="project-buttons">
 
-    const blob = new Blob([ics], { type: "text/calendar" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `interview-${(app.company || "taskivoo").replace(/[^a-z0-9]/gi, "-").toLowerCase()}.ics`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  }
+    <a href="guardian.html" class="project-btn">
+        View Case Study →
+    </a>
 
-  function addApp() {
-    const company = $("#tk-f-company").value.trim();
-    const role = $("#tk-f-role").value.trim();
-    if (!company && !role) {
-      $("#tk-f-company").focus();
-      return;
-    }
+</div>
+        </div>
 
-    const isDuplicate = apps.some(
-      (a) => !a.archived &&
-        a.company.trim().toLowerCase() === company.toLowerCase() &&
-        (a.role || "").trim().toLowerCase() === role.toLowerCase()
-    );
-    if (isDuplicate) {
-      const proceed = confirm(`You already have an entry for "${company}" — ${role || "no role given"}. Add another anyway?`);
-      if (!proceed) return;
-    }
+    </div>
 
-    const app = {
-      id: "app_" + Date.now() + "_" + Math.floor(Math.random() * 1000),
-      company: company || "Untitled company",
-      role: role,
-      status: $("#tk-f-status").value,
-      dateApplied: $("#tk-f-date").value,
-      salary: $("#tk-f-salary").value.trim(),
-      link: $("#tk-f-link").value.trim(),
-      contact: $("#tk-f-contact").value.trim(),
-      round: $("#tk-f-round").value.trim(),
-      interviewDate: $("#tk-f-interview-date").value,
-      notes: $("#tk-f-notes").value.trim(),
-      archived: false,
-    };
-    apps.push(app);
-    saveApps();
-    closeForm();
-    render();
-  }
+<section id="contact">
 
-  function openForm() {
-    formEl.classList.add("tk-open");
-    if (!$("#tk-f-date").value) {
-      $("#tk-f-date").value = new Date().toISOString().slice(0, 10);
-    }
-    $("#tk-f-company").focus();
-  }
-  function closeForm() {
-    formEl.classList.remove("tk-open");
-    ["tk-f-company", "tk-f-role", "tk-f-salary", "tk-f-link", "tk-f-contact", "tk-f-round", "tk-f-notes"].forEach((id) => ($(`#${id}`).value = ""));
-    $("#tk-f-status").value = "APPLIED";
-    $("#tk-f-date").value = "";
-    $("#tk-f-interview-date").value = "";
-  }
+    <h3>Contact</h3>
 
-  addToggleEl.addEventListener("click", () => {
-    formEl.classList.contains("tk-open") ? closeForm() : openForm();
-  });
-  $("#tk-cancel").addEventListener("click", closeForm);
-  $("#tk-save").addEventListener("click", addApp);
-  $("#tk-search").addEventListener("input", (e) => {
-    searchQuery = e.target.value;
-    renderBoard();
-  });
-  $("#tk-clear-all").addEventListener("click", () => {
-    if (apps.length === 0) return;
-    if (confirm("Clear all logged applications? This can't be undone.")) {
-      apps = [];
-      saveApps();
-      render();
-    }
-  });
+    <div class="card">
 
-  // ---------- export / import ----------
-  const modalBackdrop = $("#tk-modal-backdrop");
-  const modalTitle = $("#tk-modal-title");
-  const modalSub = $("#tk-modal-sub");
-  const modalTextarea = $("#tk-modal-textarea");
-  const modalPrimary = $("#tk-modal-primary");
-  const modalMsg = $("#tk-modal-msg");
-  let modalMode = "export";
+        <p><strong>Email</strong></p>
 
-  function closeModal() {
-    modalBackdrop.classList.remove("tk-open");
-    modalMsg.textContent = "";
-    modalMsg.classList.remove("tk-error");
-  }
+        <p>
+            <a href="mailto:gadhambindhu46@gmail.com">
+                gadhambindhu46@gmail.com
+            </a>
+        </p>
 
-  function openExportModal() {
-    modalMode = "export";
-    modalTitle.textContent = "Export your record";
-    modalSub.textContent = "Copy this text, then paste it into Import on your other device.";
-    modalTextarea.value = JSON.stringify({ taskivoo: 1, apps }, null, 0);
-    modalTextarea.readOnly = true;
-    modalPrimary.textContent = "Copy to clipboard";
-    modalMsg.textContent = "";
-    modalMsg.classList.remove("tk-error");
-    modalBackdrop.classList.add("tk-open");
-    modalTextarea.focus();
-    modalTextarea.select();
-  }
+        <br>
 
-  function openImportModal() {
-    modalMode = "import";
-    modalTitle.textContent = "Import a record";
-    modalSub.textContent = "Paste text exported from Taskivoo. New entries are added; existing ones (matched by ID) are left as-is.";
-    modalTextarea.value = "";
-    modalTextarea.readOnly = false;
-    modalPrimary.textContent = "Import";
-    modalMsg.textContent = "";
-    modalMsg.classList.remove("tk-error");
-    modalBackdrop.classList.add("tk-open");
-    modalTextarea.focus();
-  }
+        <p><strong>Phone</strong></p>
 
-  function doImport() {
-    let parsed;
-    try {
-      parsed = JSON.parse(modalTextarea.value.trim());
-    } catch (e) {
-      modalMsg.textContent = "That doesn't look like a valid export — check you copied the whole thing.";
-      modalMsg.classList.add("tk-error");
-      return;
-    }
-    const incoming = Array.isArray(parsed) ? parsed : Array.isArray(parsed.apps) ? parsed.apps : null;
-    if (!incoming) {
-      modalMsg.textContent = "That doesn't look like a valid export — check you copied the whole thing.";
-      modalMsg.classList.add("tk-error");
-      return;
-    }
-    const existingIds = new Set(apps.map((a) => a.id));
-    let added = 0;
-    incoming.forEach((item) => {
-      if (item && item.id && !existingIds.has(item.id)) {
-        apps.push(item);
-        existingIds.add(item.id);
-        added++;
-      }
-    });
-    saveApps();
-    render();
-    modalMsg.textContent = added > 0 ? `Added ${added} new entr${added === 1 ? "y" : "ies"}.` : "No new entries found — everything here was already in your record.";
-    modalMsg.classList.remove("tk-error");
-  }
+        <p>
+            <a href="tel:+12564689403">
+                +1 (256) 468-9403
+            </a>
+        </p>
 
-  $("#tk-export").addEventListener("click", openExportModal);
-  $("#tk-import").addEventListener("click", openImportModal);
-  $("#tk-modal-cancel").addEventListener("click", closeModal);
-  modalBackdrop.addEventListener("click", (e) => { if (e.target === modalBackdrop) closeModal(); });
+    </div>
 
-  modalPrimary.addEventListener("click", async () => {
-    if (modalMode === "export") {
-      try {
-        await navigator.clipboard.writeText(modalTextarea.value);
-        modalMsg.textContent = "Copied. Paste it into Import on your other device.";
-        modalMsg.classList.remove("tk-error");
-      } catch (e) {
-        modalTextarea.select();
-        modalMsg.textContent = "Couldn't auto-copy — text is selected, use Cmd/Ctrl+C.";
-        modalMsg.classList.add("tk-error");
-      }
-    } else {
-      doImport();
-    }
-  });
+</section>
 
-  // ---------- theme ----------
-  const THEME_KEY = "taskivoo:theme";
-  const themeToggleEl = $("#tk-theme-toggle");
+<footer>
 
-  function applyTheme(isDark) {
-    root.classList.toggle("tk-dark", isDark);
-    themeToggleEl.textContent = isDark ? "☀" : "☾";
-  }
+    © 2026 Bindhu Gadham
 
-  async function loadTheme() {
-    let isDark = false;
-    try {
-      if (hasClaudeStorage) {
-        const res = await window.storage.get(THEME_KEY, false);
-        isDark = res && res.value === "dark";
-      } else {
-        isDark = localStorage.getItem(THEME_KEY) === "dark";
-      }
-    } catch (e) {
-      isDark = false;
-    }
-    applyTheme(isDark);
-  }
+</footer>
 
-  async function saveTheme(isDark) {
-    try {
-      if (hasClaudeStorage) {
-        await window.storage.set(THEME_KEY, isDark ? "dark" : "light", false);
-      } else {
-        localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
-      }
-    } catch (e) {
-      console.error("Taskivoo: could not save theme", e);
-    }
-  }
-
-  themeToggleEl.addEventListener("click", () => {
-    const isDark = !root.classList.contains("tk-dark");
-    applyTheme(isDark);
-    saveTheme(isDark);
-  });
-
-  loadTheme();
-  loadApps();
-})();
-</script>
-
-<script>
-  if ("serviceWorker" in navigator && location.protocol !== "file:") {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch((e) => console.warn("SW registration failed:", e));
-    });
-  }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
+
+
