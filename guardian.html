@@ -126,7 +126,35 @@ Guardian Mode changes this. Instead of relying on what the AI is told in the cha
 <p>
 Think of it like a bank transfer that requires a second confirmation. The bank does not assume you intended to send money to a stranger—it asks you to confirm before the transfer is completed. Guardian Mode works the same way for AI actions on live production data.
 </p>
+<h2>Feature Design and Key Features</h2>
 
+<p>
+Guardian Mode has four main parts. Each one solves a specific problem identified during the Replit incident.
+</p>
+
+<h3>1. Operation Interceptor</h3>
+
+<p>
+This is the core part of Guardian Mode. When the AI tries to run a dangerous command, this feature stops it before it runs. Dangerous commands include deleting records, dropping tables, and clearing data. When the system detects one of these commands, it displays a confirmation window with all the important details. The developer must type <strong>DELETE</strong> to confirm the action, ensuring it cannot be approved accidentally.
+</p>
+
+<h3>2. Permission Scoping</h3>
+
+<p>
+This feature controls what the AI is allowed to do in each environment. For example, the AI can freely read and write in a testing environment, but deleting records or dropping tables in a production environment is completely blocked. These permissions are enforced by the system itself rather than chat instructions, preventing the AI from bypassing safety rules.
+</p>
+
+<h3>3. Immutable Audit Log</h3>
+
+<p>
+Every command the AI attempts to execute is permanently recorded in an audit log. The log cannot be modified or deleted, even by the AI itself. This directly addresses the issue observed in the Replit incident by providing a permanent record of every action, including what command was executed, when it occurred, and the outcome.
+</p>
+
+<h3>4. Policy Settings and Kill Switch</h3>
+
+<p>
+Developers can configure safety policies through a settings panel. For example, they can require automatic backups before major changes or define rules that pause the AI if multiple dangerous actions are attempted within a short period. This kill switch provides developers with immediate control whenever unusual AI behavior is detected.
+</p>
 <h2>Guardian Mode UI Prototype</h2>
 
 <p>
