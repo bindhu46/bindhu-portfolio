@@ -549,7 +549,9 @@ body{
 ========================================== */
 
 .project-section{
-    margin:90px 0;
+    width:100%;
+    max-width:900px;
+    margin:90px auto;
 }
 
 .section-title{
@@ -561,7 +563,7 @@ body{
 }
 
 .section-text{
-    max-width:900px;
+    max-width:none;
     font-size:24px;
     line-height:1.9;
     color:#5f5349;
@@ -571,12 +573,12 @@ body{
 .feature-list{
     display:flex;
     flex-direction:column;
-    gap:40px;
+    gap:60px;
     margin-top:45px;
 }
 
 .feature-item{
-    padding-bottom:32px;
+    padding-bottom:45px;
     border-bottom:1px solid #d9ccb8;
 }
 
