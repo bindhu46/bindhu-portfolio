@@ -504,12 +504,15 @@ body{
 
 .highlight-box{
     background:#eef8ff;
-    border-left:6px solid #56a8ff;
+    border-left:6px solid #6bb6ff;
     padding:22px;
-    margin:30px 0;
+    margin:28px 0;
     border-radius:10px;
 }
 
 .highlight-box p{
     margin:0;
+    font-size:inherit;
+    line-height:inherit;
+    color:inherit;
 }
