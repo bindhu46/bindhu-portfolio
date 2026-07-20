@@ -162,11 +162,23 @@ section h3{
     box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.projects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:35px;
-    align-items:stretch;
+.project-card{
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    width:100%;
+    min-height:340px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
 }
 
 
