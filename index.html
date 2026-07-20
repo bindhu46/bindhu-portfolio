@@ -1,205 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bindhu Gadham | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
 <body>
 
-<nav class="navbar">
+<nav>
+    <div class="logo">Bindhu</div>
 
-    <div class="logo">
-        Bindhu Gadham
-    </div>
-
-    <ul class="nav-links">
+    <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <a href="#" class="resume-btn">View Resume</a>
-
 </nav>
 
 <header class="hero">
 
-    <div class="hero-left">
-        <img src="images/profile.jpg" class="profile-photo">
+    <div class="hero-image">
+        <img src="images/profile.jpg" alt="Bindhu Gadham" class="profile-photo">
     </div>
 
-    <div class="hero-right">
+    <div class="hero-content">
 
-        <p class="hello">Hello, I'm Bindhu</p>
-
-        <h1>
-            Turning Data into<br>
-            Actionable Insights.
-        </h1>
+        <h1>Bindhu Gadham</h1>
 
         <p class="hero-text">
-            Master of Science graduate passionate about analytics, business intelligence,
-            SQL, Python, Tableau, Power BI and building products that solve real business problems.
-        </p>
+I build projects at the intersection of data, business, and technology. From analyzing retail sales data to creating a Progressive Web App for job seekers and designing an AI safety framework, each project reflects my passion for solving real-world problems with thoughtful, data-driven solutions.
+</p>
 
         <div class="hero-buttons">
-            <a href="#" class="btn primary">View Resume</a>
-            <a href="#contact" class="btn secondary">Contact Me</a>
+
+            <a href="#" class="btn primary">
+                View Resume
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Contact
+            </a>
+
         </div>
 
     </div>
 
 </header>
 
-<section class="top-cards">
+<section id="about">
 
-    <div class="info-card">
-        <h3>About Me</h3>
+<h3>About Me</h3>
+
+<div class="card">
+
+<p>
+Master of Science graduate with a passion for analytics, business intelligence, and data visualization. I enjoy using SQL, Python, Excel, Tableau, and Power BI to uncover insights, solve business problems, and support data-driven decision-making.
+</p>
+
+</div>
+
+</section>
+
+    <section id="certifications">
+
+    <h3>Certifications</h3>
+
+    <div class="card">
+
+        <h4>Google Data Analytics Professional Certificate</h4>
 
         <p>
-        Master of Science graduate with experience in SQL, Python,
-        Tableau, Power BI, Business Analysis and dashboard development.
+            Issued by Google through Coursera.
+        </p>
+
+        <br>
+
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/UYATOOECWAUU"
+        target="_blank"
+        class="btn primary">
+            View Certificate
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <h3>Featured Projects</h3>
+
+    <div class="projects">
+
+        <div class="project-card">
+
+    <div class="project-number">01</div>
+            
+<img
+    src="images/taskivoo-thumbnail.png"
+    alt="Taskivoo Preview"
+    class="project-thumb">
+            
+    <h4>🚀 Taskivoo</h4>
+
+    <p class="project-short">
+        A lightweight personal job application tracker built to organize applications, interviews, follow-ups, and career progress in one place.
+    </p>
+
+   <div class="tech">
+
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PWA</span>
+    <span>LocalStorage</span>
+
+</div>
+    <a href="https://tranquil-pasca-6081a1.netlify.app"
+   target="_blank"
+   class="demo">
+   Open Live Demo →
+</a>
+<a href="taskivoo-case.html" class="project-btn">
+    View Case Study →
+</a>
+</div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <h4>📊 Retail Sales Analysis</h4>
+
+          <p>
+End-to-end retail sales analysis using SQL, MySQL, Excel, and Power BI to uncover business insights, profitability trends, and KPI performance from 9,800+ sales records.
+</p>
+
+            <div class="tech">
+
+    <span>SQL</span>
+    <span>MySQL</span>
+    <span>Power BI</span>
+    <span>Excel</span>
+    <span>Business Analysis</span>
+
+</div>
+<a href="retail-sales.html" class="project-btn">
+    View Case Study →
+</a>
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <h4>🛡 Guardian Mode</h4>
+
+            <p>
+
+                AI safety framework focused on permissions,
+                audit logging,
+                and operational risk management.
+
+            </p>
+
+            <div class="tech">
+
+                <span>AI</span>
+                <span>Security</span>
+                <span>Research</span>
+                <span>Risk</span>
+
+            </div>
+<div class="project-buttons">
+
+    <a href="guardian.html" class="project-btn">
+        View Case Study →
+    </a>
+
+</div>
+        </div>
+
+    </div>
+
+<section id="contact">
+
+    <h3>Contact</h3>
+
+    <div class="card">
+
+        <p><strong>Email</strong></p>
+
+        <p>
+            <a href="mailto:gadhambindhu46@gmail.com">
+                gadhambindhu46@gmail.com
+            </a>
+        </p>
+
+        <br>
+
+        <p><strong>Phone</strong></p>
+
+        <p>
+            <a href="tel:+12564689403">
+                +1 (256) 468-9403
+            </a>
         </p>
 
     </div>
 
-    <div class="info-card">
-
-        <h3>Certifications</h3>
-
-        <p>Google Data Analytics Professional Certificate</p>
-
-        <a href="#">View Certificate →</a>
-
-    </div>
-
 </section>
 
-<section id="projects">
+<footer>
 
-<h2>Featured Projects</h2>
+    © 2026 Bindhu Gadham
 
-<div class="projects">
+</footer>
 
-<!-- TASKIVOO -->
-
-<div class="project-card">
-
-<img src="taskivoo-thumbnail.png" class="project-thumb">
-
-<div class="project-content">
-
-<div class="project-number">01</div>
-
-<h3>🚀 Taskivoo</h3>
-
-<p>
-A lightweight personal job application tracker that helps users organize applications, interviews, follow-ups, and offers in one place.
-</p>
-
-<div class="tech">
-
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>PWA</span>
-<span>LocalStorage</span>
-
-</div>
-
-<div class="links">
-
-<a href="https://tranquil-pasca-6081a1.netlify.app" target="_blank">
-Live Demo →
-</a>
-
-<a href="taskivoo-case.html">
-Case Study →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- RETAIL -->
-
-<div class="project-card">
-
-<img src="retail-thumbnail.png" class="project-thumb">
-
-<div class="project-content">
-
-<div class="project-number">02</div>
-
-<h3>📊 Retail Sales</h3>
-
-<p>
-Analyzed 9,800+ retail sales records using SQL, MySQL, Excel, and Power BI to uncover trends and business insights.
-</p>
-
-<div class="tech">
-
-<span>SQL</span>
-<span>MySQL</span>
-<span>Power BI</span>
-<span>Excel</span>
-
-</div>
-
-<div class="links">
-
-<a href="retail-sales.html">
-Case Study →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- GUARDIAN -->
-
-<div class="project-card">
-
-<img src="guardian-thumbnail.png" class="project-thumb">
-
-<div class="project-content">
-
-<div class="project-number">03</div>
-
-<h3>🛡 Guardian Mode</h3>
-
-<p>
-AI safety framework focused on permissions, audit logging, and reducing operational risk in AI systems.
-</p>
-
-<div class="tech">
-
-<span>AI</span>
-<span>Security</span>
-<span>Research</span>
-
-</div>
-
-<div class="links">
-
-<a href="guardian.html">
-Case Study →
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="contact">
-
-<h2>Let's Connect</h2>
-
-</section>
+<script src="script.js"></script>
 
 </body>
+</html>
