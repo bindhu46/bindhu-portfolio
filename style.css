@@ -529,3 +529,18 @@ body{
 }
 
 }
+.case-study-section {
+    margin-top: 80px;
+}
+
+.case-study-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.case-study-section p {
+    max-width: 760px;
+    line-height: 1.8;
+    color: #5f5349;
+    margin-bottom: 20px;
+}
