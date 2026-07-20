@@ -491,13 +491,4 @@ body{
     gap:15px;
 }
 
-.project-links{
-    display:flex;
-    gap:20px;
-    margin:40px 0;
-    flex-wrap:wrap;
-}
-
-.project-links .btn{
-    display:inline-block;
 }
