@@ -155,16 +155,28 @@ Every command the AI attempts to execute is permanently recorded in an audit log
 <p>
 Developers can configure safety policies through a settings panel. For example, they can require automatic backups before major changes or define rules that pause the AI if multiple dangerous actions are attempted within a short period. This kill switch provides developers with immediate control whenever unusual AI behavior is detected.
 </p>
-<h2>Guardian Mode UI Prototype</h2>
+
+    <h2>UI Design: What Guardian Mode Looks Like</h2>
 
 <p>
-The interface intercepts high-risk AI operations before execution, allowing developers to review the command, understand the impact, and either approve or block the action.
+The screen below shows how Guardian Mode would look when it catches a dangerous action. The AI tried to delete all records from the live database. Guardian Mode stopped it and showed this message to the developer.
 </p>
 
 <div class="figure">
-<img src="images/guardian-ui.png" alt="Guardian UI">
+    <img src="images/guardian-ui.png" alt="Guardian Mode UI">
 </div>
 
+<p>
+The screen is divided into two areas. On the left is a sidebar showing the current status. It displays how many operations were blocked today, how many were approved, and when the last backup was created. On the right is the main panel where the intercepted command is displayed.
+</p>
+
+<p>
+The pop-up in the center shows the exact command the AI attempted to execute, which database it was targeting, how many records would be deleted, and whether a backup is available. It also indicates that a code freeze was active. To approve the operation, the developer must type the word <strong>DELETE</strong>. A <strong>Cancel</strong> button is provided as the recommended default action.
+</p>
+
+<p>
+This design makes it very difficult to approve a dangerous action by accident. The developer must carefully review the request and understand its impact before the system allows the operation to proceed.
+</p>
 
 <h2>Key Features</h2>
 
