@@ -178,94 +178,38 @@ The pop-up in the center shows the exact command the AI attempted to execute, wh
 This design makes it very difficult to approve a dangerous action by accident. The developer must carefully review the request and understand its impact before the system allows the operation to proceed.
 </p>
 
-<h2>Key Features</h2>
-
-<div class="feature-grid">
-
-<div class="feature-card">
-<h3>🛑 Operation Interceptor</h3>
-<p>Stops destructive AI commands before execution.</p>
-</div>
-
-<div class="feature-card">
-<h3>🔒 Permission Validation</h3>
-<p>Ensures AI only performs actions allowed for the current environment.</p>
-</div>
-
-<div class="feature-card">
-<h3>📋 Immutable Audit Logs</h3>
-<p>Every AI action is permanently recorded for compliance and transparency.</p>
-</div>
-
-<div class="feature-card">
-<h3>⚡ Policy Engine</h3>
-<p>Applies configurable safety rules and blocks dangerous operations automatically.</p>
-</div>
-
-</div>
-
-
-<h2>Business Impact</h2>
-
-<p>
-Guardian Mode reduces operational risk, protects production data, improves governance, increases user trust in AI systems, and provides organizations with a transparent approval process for high-risk AI operations.
-</p>
-
-<div class="figure">
-<img src="images/Success Metrics.png" alt="Business Impact">
-</div>
-<h2>Feature Design</h2>
-
-<p>
-Guardian Mode combines multiple safety mechanisms into a single framework. Rather than relying on users to notice dangerous AI behavior after execution, the system prevents high-risk actions before they occur.
-</p>
-
-<div class="figure">
-    <img src="images/Feature Design and Key Features.png" alt="Feature Design">
-</div>
-
-
 <h2>User Flow</h2>
 
 <p>
-Every AI request follows a controlled workflow. Commands are analyzed, permissions are verified, policies are evaluated, and only approved operations are allowed to execute.
+Here is how a developer would use Guardian Mode in their daily work.
 </p>
 
-<div class="figure">
-    <img src="images/User Flow.png" alt="User Flow">
-</div>
-
-
-<h2>Why This Problem Matters</h2>
+<h3>Step 1 — Turn on Guardian Mode</h3>
 
 <p>
-As AI agents become more capable, organizations need governance mechanisms that protect production environments without slowing developer productivity. Guardian Mode provides that missing safety layer.
+The developer opens the settings panel and enables Guardian Mode. They choose which actions require approval in each environment. The default settings follow recommended security best practices.
 </p>
 
-<div class="figure">
-    <img src="images/Why This Problem Matters.png" alt="Why This Problem Matters">
-</div>
-
-
-<h2>Success Metrics</h2>
+<h3>Step 2 — Work Normally</h3>
 
 <p>
-The framework measures success using blocked destructive operations, approval accuracy, audit coverage, policy compliance, and reduction in production incidents.
+The developer continues using the AI coding assistant as usual. Safe actions such as reading data, generating code, or creating files proceed without interruption. Guardian Mode runs quietly in the background.
 </p>
 
-<div class="figure">
-    <img src="images/Success Metrics.png" alt="Success Metrics">
-</div>
-</div>
+<h3>Step 3 — Dangerous Action Detected</h3>
 
-</div>
+<p>
+If the AI attempts to delete data, drop a table, or execute another high-risk command, Guardian Mode immediately intercepts the request and displays the approval screen before anything is executed.
+</p>
 
-<footer class="site-footer">
-<div class="wrap">
-Bindhu Gadham
+<h3>Step 4 — Developer Decides</h3>
 
-</div>
-</footer>
+<p>
+The developer reviews the command, checks the affected database, confirms the number of records involved, and either approves or cancels the operation. To approve a dangerous action, they must type the command name as confirmation.
+</p>
 
-</body>
-</html>
+<h3>Step 5 — Everything is Saved</h3>
+
+<p>
+Regardless of the developer's decision, the action and the final outcome are permanently recorded in the immutable audit log with a timestamp. This ensures complete transparency and accountability for every high-risk operation.
+</p>
