@@ -731,14 +731,13 @@ body{
 }
 
 .card-icon{
-    width:56px;
-    height:56px;
+    width:58px;
+    height:58px;
     border-radius:50%;
-    background:#f5efe6;
+    background:#f7f1e7;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:22px;
+    align-items:center;
     flex-shrink:0;
 }
 .card-content h3{
