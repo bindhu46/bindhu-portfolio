@@ -294,7 +294,12 @@ footer{
     padding:50px;
     color:#777;
 }
-
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    margin-top:30px;
+}
 /* Mobile */
 
 @media(max-width:900px){
