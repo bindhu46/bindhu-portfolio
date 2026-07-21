@@ -1,6 +1,4 @@
-body{
-    background:multi !important;
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -834,31 +832,4 @@ body{
         grid-template-columns:1fr;
     }
 
-}
-.project-buttons{
-    display:flex;
-    gap:16px;
-    justify-content:center;
-    margin-top:24px;
-    flex-wrap:wrap;
-}
-
-.project-btn{
-    padding:14px 28px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:600;
-    border:1px solid #9d7a42;
-    color:#9d7a42;
-    transition:.2s;
-}
-
-.project-btn:hover{
-    background:#9d7a42;
-    color:white;
-}
-
-.secondary{
-    border-color:#d8c8b0;
-    color:#555;
 }
