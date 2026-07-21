@@ -92,7 +92,12 @@ nav a:hover{
     flex:1;
     max-width:900px;
 }
-
+.hero-greeting{
+    color:#b2874c;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:12px;
+}
 .hero h1{
     font-size:60px;
     color:#111;
