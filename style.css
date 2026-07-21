@@ -833,3 +833,35 @@ body{
     }
 
 }
+/* ---------- Taskivoo Case Study ---------- */
+
+.cs-header{
+    max-width:760px;
+    margin:90px auto 70px;
+}
+
+.project-section{
+    max-width:760px;
+    margin:110px auto;
+}
+
+.demo-wrapper{
+    max-width:650px;
+    margin:40px auto;
+}
+
+.project-buttons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:20px;
+}
+
+.section-text{
+    line-height:2;
+}
+
+.feature-item{
+    padding:40px 0;
+    border-bottom:1px solid #d9ccb8;
+}
