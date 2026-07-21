@@ -190,7 +190,12 @@ section h3{
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
-
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    margin-top:30px;
+}
 .project-card{
     background:#fff;
     border-radius:18px;
@@ -684,7 +689,7 @@ body{
     max-width:1400px;
     margin:40px auto 70px;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2, minmax(0,1fr));
     gap:30px;
 }
 
@@ -722,11 +727,13 @@ body{
 }
 
 .info-card{
+    width:100%;
     display:flex;
     align-items:flex-start;
     gap:22px;
     padding:32px;
-    min-height:160px;
+    min-height:180px;
+    background:#fff;
     border-radius:20px;
 }
 
@@ -742,6 +749,7 @@ body{
 }
 .card-content{
     flex:1;
+    width:100%;
 }
 .card-content h3{
     font-size:30px;
