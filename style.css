@@ -836,17 +836,16 @@ body{
 /* ---------- Taskivoo Case Study ---------- */
 
 .cs-header{
-    max-width:1000px;
+    width:min(1100px,92%);
     margin:90px auto 70px;
 }
-
 .project-section{
-    max-width:1000px;
+    width:min(1100px,92%);
     margin:110px auto;
 }
 
 .demo-wrapper{
-    max-width:800px;
+    width:100%;
     margin:40px auto;
 }
 
