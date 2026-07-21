@@ -411,7 +411,7 @@ section{
 }
 
 .wrap{
-    width:min(1500px,92%);
+    width:min(1200px,92%);
     margin:auto;
 }
 
@@ -835,18 +835,11 @@ body{
 }
 /* ---------- Taskivoo Case Study ---------- */
 
-.cs-header{
-    width:min(1100px,92%);
-    margin:90px auto 70px;
-}
+.cs-header,
 .project-section{
-    width:min(1100px,92%);
-    margin:110px auto;
-}
-
-.demo-wrapper{
     width:100%;
-    margin:40px auto;
+    max-width:none;
+    margin:90px 0;
 }
 
 .project-buttons{
