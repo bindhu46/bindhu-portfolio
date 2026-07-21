@@ -63,13 +63,14 @@ nav a:hover{
 /* Hero */
 
 .hero{
-    max-width:1400px;
+    width:95%;
+    max-width:1600px;
     margin:80px auto;
     display:flex;
     align-items:center;
-    justify-content:center;
-    gap:70px;
-    padding:0 40px;
+    justify-content:space-between;
+    gap:100px;
+    padding:0;
 }
 
 .hero-image{
