@@ -113,9 +113,7 @@ nav a:hover{
 .hero p{
     font-size:18px;
     color:#666;
-    max-width:520px;
 }
-
 .hero-buttons{
     margin-top:35px;
     display:flex;
