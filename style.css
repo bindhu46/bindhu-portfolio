@@ -63,7 +63,7 @@ nav a:hover{
 /* Hero */
 
 .hero{
-    max-width:1200px;
+    max-width:1400px;
     margin:80px auto;
     display:flex;
     align-items:center;
@@ -73,7 +73,7 @@ nav a:hover{
 }
 
 .hero-image{
-    flex:1;
+    flex:0.8;
     display:flex;
     justify-content:center;
 }
@@ -88,7 +88,7 @@ nav a:hover{
 }
 
 .hero-content{
-    flex:1;
+    flex:1.6;
 }
 
 .hero h1{
