@@ -709,3 +709,56 @@ body{
     }
 
 }
+/* ---------- About & Certifications ---------- */
+
+.top-cards{
+    max-width:1200px;
+    margin:40px auto 70px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.info-card{
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+    padding:35px;
+    border-radius:20px;
+}
+
+.card-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#f5efe6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    flex-shrink:0;
+}
+
+.card-content h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    color:#555;
+    line-height:1.8;
+}
+
+.small-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+}
+
+@media(max-width:900px){
+
+    .top-cards{
+        grid-template-columns:1fr;
+    }
+
+}
