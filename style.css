@@ -345,18 +345,7 @@ footer{
     padding:50px;
     color:#777;
 }
-.projects{
-    width:100%;
-    max-width:1400px;
-    margin:40px auto;
 
-    display:grid;
-    grid-template-columns:repeat(3,416px);
-
-    justify-content:center;
-
-    gap:40px;
-}
 /* Mobile */
 
 @media(max-width:900px){
@@ -641,8 +630,9 @@ body{
     font-size:46px;
 }
 
-    .projects{
-    grid-template-columns:1fr;
+ 
+
+    
 }
 .sub{
     font-size:22px;
