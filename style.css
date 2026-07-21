@@ -98,10 +98,23 @@ nav a:hover{
     font-weight:600;
     margin-bottom:12px;
 }
+.hero-greeting{
+    color:#b1874d;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.hero-title{
+    font-family:Georgia, serif;
+    font-size:72px;
+    line-height:1.05;
+    font-weight:700;
+    color:#222;
+    margin-bottom:22px;
+}
 .hero h1{
-    font-size:60px;
-    color:#111;
-    margin-bottom:15px;
+    margin:0;
 }
 
 .hero h2{
