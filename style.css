@@ -242,7 +242,47 @@ section h3{
     border-radius:16px;
     margin:20px 0;
 }
+.project-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:auto;
+}
 
+.demo,
+.project-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    height:48px;
+
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.demo{
+    background:#ffffff;
+    border:2px solid #b88746;
+    color:#b88746;
+}
+
+.demo:hover{
+    background:#f7efe3;
+}
+
+.project-btn{
+    background:#b88746;
+    color:#fff;
+}
+
+.project-btn:hover{
+    background:#9c6e34;
+}
 
 .project-number{
     width:48px;
