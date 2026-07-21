@@ -354,8 +354,6 @@ footer{
     grid-template-columns:1fr;
 }
 
-}
-
 .hero{
     flex-direction:column;
     text-align:center;
@@ -700,15 +698,6 @@ body{
 /* ===================================
    ABOUT & CERTIFICATION LAYOUT
 =================================== */
-
-.top-cards{
-    width:95%;
-    max-width:1400px;
-    margin:40px auto 70px;
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0,1fr));
-    gap:30px;
-}
 
 #about,
 #certifications{
