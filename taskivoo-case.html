@@ -71,248 +71,176 @@ notes with an intuitive tracking system.
 
 </header>
 
-<main class="wrap cs-body">
+<div class="wrap">
 
-<section class="project-section">
+    <header class="cs-header">
 
-<h2 class="section-title">
-Interactive Demo
-</h2>
-
-<p class="section-text">
-
-The application below is the live version of Taskivoo.
-Everything you create is stored privately inside your browser using Local Storage.
-
-</p>
-
-<div class="demo-wrapper">
-
-<iframe
-src="https://tranquil-pasca-6081a1.netlify.app"
-width="100%"
-height="900"
-frameborder="0"
-style="border:1px solid #d9ccb8; border-radius:18px;">
-</iframe>
-
-</div>
-
-<div class="project-buttons">
-
-    <a href="https://tranquil-pasca-6081a1.netlify.app"
-       target="_blank"
-       class="project-btn">
-        Open Full App →
-    </a>
-
-    <a href="index.html"
-       class="project-btn secondary">
-        Back to Portfolio →
-    </a>
-
-</div>
-
-
-</section>
-
-<section class="project-section">
-
-<h2 class="section-title">
-The Problem
-</h2>
-
-<p class="section-text">
-
-Searching for a job quickly becomes difficult when applications,
-recruiters, interview dates, salaries,
-company research,
-and follow-up reminders are stored across multiple spreadsheets,
-notes,
-and emails.
-
-As opportunities increase,
-keeping everything organized becomes stressful and time-consuming.
-
-</p>
-
-<p class="section-text">
-
-Taskivoo solves this problem by giving users a single workspace to manage every application from wishlist to offer.
-
-</p>
-
-</section>
-<section class="project-section">
-
-    <h2 class="section-title">
-        Key Features
-    </h2>
-
-    <div class="feature-list">
-
-        <div class="feature-item">
-            <h3>Five-Stage Workflow</h3>
-
-            <p>
-                Every application moves through five clear stages:
-                <strong>Wishlist</strong>,
-                <strong>Applied</strong>,
-                <strong>Interview</strong>,
-                <strong>Offer</strong>, and
-                <strong>Rejected</strong>.
-                This gives users a complete picture of their job search.
-            </p>
+        <div class="tag">
+            Personal Project · Progressive Web App
         </div>
 
-        <div class="feature-item">
-            <h3>Dashboard Analytics</h3>
+        <h1>Taskivoo</h1>
 
-            <p>
-                Live statistics automatically display the number of applications
-                in each stage, helping users quickly understand their progress.
-            </p>
+        <p class="sub">
+            A Progressive Web Application (PWA) that helps job seekers organize
+            applications, interviews, recruiter contacts, follow-ups, and offers
+            within one clean, distraction-free workspace.
+        </p>
+
+    </header>
+
+    <div class="cs-body">
+
+        <h2>Interactive Demo</h2>
+
+        <p>
+            Explore the live version of Taskivoo below. All application data is
+            stored privately in your browser using the Local Storage API.
+        </p>
+
+        <iframe
+            src="https://tranquil-pasca-6081a1.netlify.app"
+            width="100%"
+            height="900"
+            frameborder="0"
+            style="border:1px solid #d9ccb8;border-radius:16px;">
+        </iframe>
+
+        <div class="project-links" style="margin-top:30px;">
+
+            <a href="https://tranquil-pasca-6081a1.netlify.app"
+               target="_blank"
+               class="btn primary">
+                Open Full App
+            </a>
+
+            <a href="index.html"
+               class="btn secondary">
+                ← Back to Portfolio
+            </a>
+
         </div>
 
-        <div class="feature-item">
-            <h3>Powerful Search & Filters</h3>
+        <h2>The Problem</h2>
 
-            <p>
-                Users can instantly search by company name or filter
-                applications by status to find exactly what they need.
-            </p>
+        <p>
+            Job searching quickly becomes difficult when applications,
+            interview schedules, recruiter conversations, salary notes,
+            company research, and follow-up reminders are scattered across
+            spreadsheets, notebooks, emails, and browser bookmarks.
+        </p>
+
+        <p>
+            As opportunities increase, it becomes harder to understand where
+            each application stands or when action is required.
+        </p>
+
+        <p>
+            Taskivoo solves this problem by providing one organized workspace
+            where every application moves through a structured hiring pipeline,
+            helping users stay organized throughout their job search.
+        </p>
+
+        <h2>Key Features</h2>
+
+        <p>
+            <strong>Five-stage workflow.</strong> Applications move through
+            Wishlist, Applied, Interview, Offer, and Rejected stages,
+            providing a clear overview of the hiring process.
+        </p>
+
+        <p>
+            <strong>Dashboard analytics.</strong> Live statistics summarize
+            applications by status, helping users monitor progress instantly.
+        </p>
+
+        <p>
+            <strong>Search and filtering.</strong> Quickly locate applications
+            by company name or filter by hiring stage.
+        </p>
+
+        <p>
+            <strong>Automatic follow-up reminders.</strong> Applications that
+            remain in the Applied stage for more than ten days are highlighted,
+            encouraging timely recruiter follow-ups.
+        </p>
+
+        <p>
+            <strong>Dark mode.</strong> Users can switch between light and dark
+            themes, with preferences automatically saved.
+        </p>
+
+        <p>
+            <strong>Import and export.</strong> Application history can be
+            exported and restored across devices.
+        </p>
+
+        <p>
+            <strong>Interview scheduling.</strong> Interview dates can be
+            exported as calendar events for quick scheduling.
+        </p>
+
+        <p>
+            <strong>Progressive Web App.</strong> Taskivoo can be installed on
+            desktop and mobile devices for an app-like experience.
+        </p>
+
+        <h2>Design Decisions</h2>
+
+        <p>
+            Instead of creating another dashboard filled with bright colors,
+            Taskivoo was designed around calm typography, generous white space,
+            warm neutral colors, and a distraction-free layout.
+        </p>
+
+        <p>
+            Every interface element was intentionally simplified so users can
+            focus on managing applications instead of learning a complicated
+            interface.
+        </p>
+
+        <h2>Technologies Used</h2>
+
+        <div class="stack-list">
+
+            <span class="stack-pill">HTML5</span>
+            <span class="stack-pill">CSS3</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Progressive Web App</span>
+            <span class="stack-pill">Local Storage API</span>
+            <span class="stack-pill">Responsive Design</span>
+
         </div>
 
-        <div class="feature-item">
-            <h3>Automatic Follow-up Reminders</h3>
+        <h2>What I Learned</h2>
 
-            <p>
-                Applications that remain in the Applied stage for more than
-                ten days are automatically highlighted,
-                reminding users to contact recruiters.
-            </p>
-        </div>
+        <p>
+            Building Taskivoo strengthened my understanding of responsive
+            interface design, browser storage, Progressive Web Apps,
+            application state management, and creating products around
+            real user problems.
+        </p>
 
-        <div class="feature-item">
-            <h3>Dark Mode</h3>
+        <h2>Project Outcome</h2>
 
-            <p>
-                A built-in light and dark theme lets users choose their preferred
-                workspace. The selected theme is saved automatically.
-            </p>
-        </div>
+        <div class="callout">
 
-        <div class="feature-item">
-            <h3>Export & Import</h3>
+            Taskivoo demonstrates my ability to identify a real-world problem,
+            design an intuitive user experience, and build a complete web
+            application using modern front-end technologies. The project
+            combines responsive design, Progressive Web App capabilities,
+            local data persistence, and practical productivity features
+            into a polished portfolio application.
 
-            <p>
-                Users can export their application data and restore it later,
-                making it easy to move between devices while keeping progress.
-            </p>
-        </div>
-
-        <div class="feature-item">
-            <h3>Interview Scheduling</h3>
-
-            <p>
-                Interview dates can be attached to applications and exported
-                as calendar events for quick scheduling.
-            </p>
-        </div>
-
-        <div class="feature-item">
-            <h3>Progressive Web App (PWA)</h3>
-
-            <p>
-                Taskivoo can be installed like a native application,
-                allowing quick access from desktop or mobile while providing
-                an app-like experience.
-            </p>
         </div>
 
     </div>
 
-</section>
-<section class="project-section">
-
-    <h2 class="section-title">
-        Design Decisions
-    </h2>
-
-    <p class="section-text">
-        Rather than creating another dashboard filled with bright colors,
-        Taskivoo was intentionally designed to feel calm and distraction-free.
-        The interface uses warm neutral colors, elegant typography,
-        generous white space, and clear visual hierarchy so users can
-        focus on their job search instead of navigating a complex interface.
-    </p>
-
-    <p class="section-text">
-        Every screen was designed with simplicity in mind.
-        Important actions remain visible while unnecessary visual clutter
-        was removed to create a clean, professional experience.
-    </p>
-
-</section>
-
-<section class="project-section">
-
-    <h2 class="section-title">
-        Technologies Used
-    </h2>
-
-    <div class="stack-list">
-
-        <span class="stack-pill">HTML5</span>
-        <span class="stack-pill">CSS3</span>
-        <span class="stack-pill">JavaScript</span>
-        <span class="stack-pill">Progressive Web App</span>
-        <span class="stack-pill">Local Storage API</span>
-        <span class="stack-pill">Responsive Design</span>
-
-    </div>
-
-</section>
-
-<section class="project-section">
-
-    <h2 class="section-title">
-        What I Learned
-    </h2>
-
-    <p class="section-text">
-        Building Taskivoo strengthened my understanding of front-end
-        architecture, state management with Local Storage,
-        responsive layouts, Progressive Web Apps,
-        and designing user interfaces focused on real-world productivity.
-    </p>
-
-</section>
-
-<section class="project-section">
-
-    <h2 class="section-title">
-        Project Outcome
-    </h2>
-
-   <div class="callout">
-
-Taskivoo demonstrates my ability to identify a real-world problem,
-design an intuitive user experience, and build a complete web
-application using modern front-end technologies. The project combines
-responsive design, Progressive Web App capabilities, local data
-persistence, and practical productivity features into a polished,
-production-ready portfolio piece.
+    <a class="back-link" href="index.html">
+        ← Back to Portfolio
+    </a>
 
 </div>
-
-</section>
-
-<a href="index.html" class="back-link">
-    ← Back to Portfolio
-</a>
-
-</main>
 
 <footer class="site-footer">
     © 2026 Bindhu Gadham
